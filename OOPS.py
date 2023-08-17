@@ -28,8 +28,11 @@ class Shark(Monster):
 		self.speed = speed
 	def bite(self):
 		print("Shark has successfully attacked")
+	# changing parent class methods
+	def move(self, speed):
+		print("Parent class method has changed now speed is ",speed)
 mon = Monster(100, 69)
 shark1 = Shark(120)
 shark1.bite()
 shark1.attack(20)
-shark1.move(122)  # accessing parent element
+shark1.move(1289)  # accessing parent element
