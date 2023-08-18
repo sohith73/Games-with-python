@@ -1,4 +1,4 @@
-import pygame, sys, time
+import pygame,  sys, time
 pygame.init()
 width, height = 1280, 720
 disp = pygame.display.set_mode((width,height))
@@ -16,16 +16,18 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
+        if event.type == pygame.MOUSEMOTION:
+            i, y = event.pos
     clock.tick(60)
     # test.fill((39, 69, 99))
     disp.fill('wheat')
-    disp.blit(img, ((100+i), 200))
-    disp.blit(img, (100 , (200+y)))
+    disp.blit(img, (i, y))
+    disp.blit(img, (100, 200))
     disp.blit(text,(100, 100))
     # disp.blit(test, ((1180-400), 0))
     pygame.display.update()
-    i = i+10
-    y = y+10
+    # i = i+10
+    # y = y+10
     # time.sleep(0.0002)
     if i > 1180:
         i = 0
